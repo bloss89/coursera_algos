@@ -6,7 +6,7 @@ public class HeapSort<Key extends Comparable<Key>> {
 			for(int k=indx/2;k>=1;k--) {
 				sink(a,k,indx);
 			}
-			//print(a); //max heap
+			print(a); //max heap
 			while(indx>1) {
 				exchange(a,1,indx);
 				sink(a,1,--indx);
@@ -40,8 +40,8 @@ public class HeapSort<Key extends Comparable<Key>> {
 
 		public static void main(String[] args) {
 			HeapSort<String> pq = new HeapSort<String>();
-			//Integer[] a = {-1,5,2,4,6,1,3};
-			String[] a = {"*","S","O","R","T","E","X","A","M","P","L","E"};
+			Integer[] a = {-1,5,2,4,6,1,3};
+		//	String[] a = {"*","S","O","R","T","E","X","A","M","P","L","E"};
 			pq.print(a);
 			pq.sort(a);
 			pq.print(a);

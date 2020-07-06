@@ -55,6 +55,7 @@ public class ThreeWayQuickSort {
 	}
 	public static void main(String[] args) {
 		Comparable[] a = {5,2,3,1,1,3,2,4,5,6,7,2,2,8,4,3,2,9,6};
+		//Comparable[] a = {5,2,4,6,1,3,5,2,4,6,1,3};
 		print(a);
 		sort(a);
 		print(a);

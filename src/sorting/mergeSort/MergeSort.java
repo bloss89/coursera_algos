@@ -35,10 +35,11 @@ public class MergeSort {
 		if(hi<=lo+ cutoff -1) {
 			InsertionSort is = new InsertionSort();
 			is.sort(a);
+			return;
 		}
 		if(hi<=lo) return;
 		int mid = lo + (hi-lo)/2;
-		sort(a,aux,0,mid);
+		sort(a,aux,lo,mid);
 		sort(a,aux,mid+1,hi);
 		if(!less(a[mid+1],a[mid]))return;
 		merge(a,aux,lo,mid,hi);

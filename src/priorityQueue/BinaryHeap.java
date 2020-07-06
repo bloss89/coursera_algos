@@ -21,8 +21,19 @@ public class BinaryHeap<Key extends Comparable<Key>> {
 	public boolean isEmpty() {
 		return (indx==0);
 	}
+	public void resize(int cap) {
+		Key[] copy = (Key[])new Comparable[cap];
+		for(int i=1;i<indx;i++) {
+			copy[i]=pq[i];
+		}
+		pq = copy; 
+	}
 	public void insert(Key k) {
-		pq[++indx]=k;
+		int l = pq.length;
+		if(++indx==l) {
+			resize(2*l);
+		}
+		pq[indx]=k;
 		swim(indx);
 	}
 	public Key delMax() {
@@ -56,6 +67,18 @@ public class BinaryHeap<Key extends Comparable<Key>> {
 	}
 
 	public static void main(String[] args) {
+		BinaryHeap<Integer> pqi = new BinaryHeap<Integer>(5);
+		pqi.insert(5);
+		pqi.insert(2);
+		pqi.insert(4);
+		pqi.insert(6);
+		pqi.insert(1);
+		pqi.insert(3);
+		pqi.insert(7);
+		pqi.print();
+		System.out.println("delMax "+pqi.delMax());
+		pqi.print();
+		
 		BinaryHeap<String> pq = new BinaryHeap<String>(5);
 		pq.insert("P");
 		pq.insert("Q");

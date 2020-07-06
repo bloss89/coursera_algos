@@ -41,6 +41,7 @@ public class QuickSort {
 		if(hi<=lo+ cutoff -1) {
 			InsertionSort is = new InsertionSort();
 			is.sort(a);
+			return;
 		}
 		if(hi<=lo) return;
 		//int m = median(a,lo,lo+(hi-lo)/2,hi);
